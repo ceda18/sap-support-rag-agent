@@ -6,6 +6,7 @@ uvicorn
 pydantic
 python-dotenv
 slack-bolt
+aiohttp
 httpx
 psycopg2-binary
 pgvector
