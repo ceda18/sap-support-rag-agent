@@ -1,0 +1,399 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "llm-telemetry",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -160,
+        -112
+      ],
+      "id": "fb7b3fd7-0bf5-4522-81a3-c62cf4c91bfb",
+      "name": "Webhook",
+      "webhookId": "52280ebb-3efe-4b0e-9aa4-0f46e0d52bdf"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1CQ7RlmUQvj6vNr4bRhYqcBHqA4j5qgwfJ_zbmfS9mmY",
+          "mode": "list",
+          "cachedResultName": "SAP PaPM Support | Telemetry",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1CQ7RlmUQvj6vNr4bRhYqcBHqA4j5qgwfJ_zbmfS9mmY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1775139736,
+          "mode": "list",
+          "cachedResultName": "KB Gaps",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1CQ7RlmUQvj6vNr4bRhYqcBHqA4j5qgwfJ_zbmfS9mmY/edit#gid=1775139736"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "timestamp": "={{$json.body.timestamp}}",
+            "user_id": "={{$json.body.user_id}}",
+            "query": "={{$json.body.query}}",
+            "answer": "={{$json.body.aswer}}",
+            "unanswered": "={{$json.body.unanswered}}",
+            "out_of_scope": "={{$json.body.out_of_scope}}",
+            "cost_usd": "={{$json.body.cost_usd}}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "user_id",
+              "displayName": "user_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "answer",
+              "displayName": "answer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "unanswered",
+              "displayName": "unanswered",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "out_of_scope",
+              "displayName": "out_of_scope",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "cost_usd",
+              "displayName": "cost_usd",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        288,
+        -208
+      ],
+      "id": "f2ffd16f-dc5d-43e4-beba-c94010fc9f0e",
+      "name": "Knowledge Base Gap",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "7Dio6eHCzbTi7DIc",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1CQ7RlmUQvj6vNr4bRhYqcBHqA4j5qgwfJ_zbmfS9mmY",
+          "mode": "list",
+          "cachedResultName": "SAP PaPM Support | Telemetry",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1CQ7RlmUQvj6vNr4bRhYqcBHqA4j5qgwfJ_zbmfS9mmY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1CQ7RlmUQvj6vNr4bRhYqcBHqA4j5qgwfJ_zbmfS9mmY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "timestamp": "={{$json.body.timestamp}}",
+            "user_id": "={{$json.body.user_id}}",
+            "query": "={{$json.body.query}}",
+            "answer": "={{$json.body.answer}}",
+            "unanswered": "={{$json.body.unanswered}}",
+            "out_of_scope": "={{$json.body.out_of_scope}}",
+            "cost_usd": "={{$json.body.cost_usd}}",
+            "input_tokens": "={{$json.body.input_tokens}}",
+            "output_tokens": "={{$json.body.output_tokens}}",
+            "cache_read_tokens": "={{$json.body.cache_read_tokens}}",
+            "cache_hit_ratio": "={{$json.body.cache_hit_ratio}}",
+            "sources": "={{$json.body.sources}}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "user_id",
+              "displayName": "user_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "answer",
+              "displayName": "answer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "unanswered",
+              "displayName": "unanswered",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "out_of_scope",
+              "displayName": "out_of_scope",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "cost_usd",
+              "displayName": "cost_usd",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "input_tokens",
+              "displayName": "input_tokens",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "output_tokens",
+              "displayName": "output_tokens",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "cache_read_tokens",
+              "displayName": "cache_read_tokens",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "cache_hit_ratio",
+              "displayName": "cache_hit_ratio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "sources",
+              "displayName": "sources",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        64,
+        -16
+      ],
+      "id": "e90c9471-2958-4aff-ab07-0a89158db02b",
+      "name": "Log",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "7Dio6eHCzbTi7DIc",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "9e275b37-a12f-4477-ab62-ffef0653ea19",
+              "leftValue": "={{ $json.body.unanswered }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        64,
+        -208
+      ],
+      "id": "6cbdf464-0268-40e4-99b7-a336272df86e",
+      "name": "if not answered"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Log",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "if not answered",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Knowledge Base Gap": {
+      "main": [
+        []
+      ]
+    },
+    "if not answered": {
+      "main": [
+        [
+          {
+            "node": "Knowledge Base Gap",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "d8a86be0-a9e0-4c17-8b6e-88f6157cfcf3",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "7a51e7f86ff91a51a7ff838b2933bfb92b5326b5ca3110038b5220edf299f77d"
+  },
+  "nodeGroups": [],
+  "id": "mVpaolafClfQTsIs",
+  "tags": []
+}
