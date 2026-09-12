@@ -1,13 +1,36 @@
+# PyTorch (CPU Only !!!)
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch
 
+# Core Backend
 fastapi
 uvicorn
 pydantic
 python-dotenv
-slack-bolt
 aiohttp
 httpx
-psycopg2-binary
+
+# Slack Integration
+slack-bolt
+
+# Database & Vector Store
+psycopg2-binary # PostgreSQL database adapter for Python
+psycopg[binary,pool] # Useful for connection pooling with PostgreSQL
+asyncpg # For asynchronous PostgreSQL operations
 pgvector
+sqlalchemy # SQLAlchemy for pgvector
+
+# Machine Learning & Embeddings
 sentence-transformers
+
+# RAG & LangChain Ecosystem
+langchain
+langchain-core
+langchain-community
+langchain-huggingface
+langchain-postgres
+langchain-anthropic
+
+# Document Processing (PDF)
+pdfplumber # great for extracting text from PDFs, especially scanned documents
+# pymupdf # alternative
