@@ -6,6 +6,7 @@ torch
 fastapi
 uvicorn
 pydantic
+pydantic-settings
 python-dotenv
 aiohttp
 httpx
@@ -15,8 +16,6 @@ slack-bolt
 
 # Database & Vector Store
 psycopg2-binary # PostgreSQL database adapter for Python
-psycopg[binary,pool] # Useful for connection pooling with PostgreSQL
-asyncpg # For asynchronous PostgreSQL operations
 pgvector
 sqlalchemy # SQLAlchemy for pgvector
 
@@ -24,13 +23,15 @@ sqlalchemy # SQLAlchemy for pgvector
 sentence-transformers
 
 # RAG & LangChain Ecosystem
-langchain
-langchain-core
-langchain-community
+langchain>=1.0
+langchain-core>=1.0
+langchain-classic>=1.0 # EnsembleRetriever lives here since LangChain 1.0
+langchain-community>=0.4 # BM25Retriever
+langchain-text-splitters
 langchain-huggingface
 langchain-postgres
 langchain-anthropic
+rank_bm25 # keyword scoring backend used by BM25Retriever
 
 # Document Processing (PDF)
 pdfplumber # great for extracting text from PDFs, especially scanned documents
-# pymupdf # alternative

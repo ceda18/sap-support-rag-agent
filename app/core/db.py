@@ -1,25 +1,14 @@
-import os
 from sqlalchemy import create_engine, text
-from dotenv import load_dotenv
+from core.config import settings
 
 # SUMMARY:
-# Load environment variables from a .env file and set up the database connection string for PostgreSQL using SQLAlchemy.
+# Database engine and the one-time setup of the pgvector extension.
 
-load_dotenv()
+engine = create_engine(settings.connection_string)
 
-DB_USER = os.environ.get("POSTGRES_USER")
-DB_PASSWORD = os.environ.get("POSTGRES_PASSWORD")
-DB_NAME = os.environ.get("POSTGRES_DB")
-DB_HOST = os.environ.get("POSTGRES_HOST")
-DB_PORT = os.environ.get("POSTGRES_PORT")
-
-CONNECTION_STRING = f"postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-
-engine = create_engine(CONNECTION_STRING)
 
 def init_db_extension():
     """Initialize the pgvector extension in the PostgreSQL database."""
     with engine.connect() as conn:
         conn.execute(text("CREATE EXTENSION IF NOT EXISTS vector;"))
         conn.commit()
-    

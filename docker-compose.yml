@@ -22,7 +22,7 @@ services:
       - .env
     volumes:
       - ./app:/app
-      - ./data:/app/data
+      - ./data:/data
     depends_on:
       - db
 
