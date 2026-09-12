@@ -8,6 +8,7 @@ from slack_bolt.adapter.socket_mode.async_handler import AsyncSocketModeHandler
 
 from core.config import settings
 from rag.chain import answer_question, get_retriever
+from services.telemetry import send_telemetry
 
 logger = logging.getLogger("uvicorn.error")
 
@@ -35,6 +36,7 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+# HELPER FUNCTIONS
 
 def format_sources(sources: list[dict]) -> str:
     """One line listing the pages the answer came from."""
@@ -43,8 +45,7 @@ def format_sources(sources: list[dict]) -> str:
     pages = sorted({s["page"] for s in sources}, key=lambda p: (not str(p).isdigit(), str(p).zfill(6)))
     return f"\n\n_📄 {sources[0]['source']} — pages: {', '.join(str(p) for p in pages)}_"
 
-
-async def handle_question(text: str, say):
+async def handle_question(text: str, say, user_id: str = "unknown"):
     """Shared logic for mentions and direct messages."""
     question = text.split(">", 1)[-1].strip()  # drop the leading <@BOT_ID> from mentions
     if not question:
@@ -54,15 +55,19 @@ async def handle_question(text: str, say):
     try:
         result = await answer_question(question)
         await say(result["answer"] + format_sources(result["sources"]))
+        asyncio.create_task(send_telemetry(question, result, user_id=user_id)) # n8n telemetry is fire-and-forget
     except Exception as e:
         logger.error(f"❌ Error answering question: {e}")
         await say("Something went wrong while answering. Check the API logs.")
 
+# =========================
+# SLACK EVENT HANDLERS
+# =========================
 
 @slack_app.event("app_mention")
 async def handle_mention(event, say):
     """React to mentions of the bot (@SAP Support RAG Agent)."""
-    await handle_question(event.get("text", ""), say)
+    await handle_question(event.get("text", ""), say, user_id=event.get("user", "unknown"))
 
 
 @slack_app.event("message")
@@ -70,10 +75,4 @@ async def handle_direct_message(event, say):
     """React to direct messages, ignoring the bot's own messages."""
     if event.get("channel_type") != "im" or event.get("bot_id"):
         return
-    await handle_question(event.get("text", ""), say)
-
-
-@app.get("/health")
-async def health_check():
-    """Health-check endpoint for checking the status of the container."""
-    return {"status": "healthy", "service": "SAP-Support-RAG-Agent"}
+    await handle_question(event.get("text", ""), say, user_id=event.get("user", "unknown"))

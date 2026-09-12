@@ -7,6 +7,7 @@ from langchain_core.documents import Document
 from rag.generator import build_llm, parse_answer
 from rag.prompts import build_prompt
 from rag.retriever import build_retriever, format_docs
+from rag.generator import build_llm, parse_answer, extract_usage, estimate_cost
 
 # SUMMARY:
 # Connects the pieces into one RAG call: retrieve chunks, render them into the prompt,
@@ -52,6 +53,8 @@ async def answer_question(question: str) -> dict:
     result = parse_answer(message)
     result["sources"] = list_sources(docs, result["answer"])
 
-    # TODO: add token usage and cost here (extract_usage / estimate_cost) before the n8n phase.
+    usage = extract_usage(message)
+    result["usage"] = usage
+    result["cost_usd"] = estimate_cost(usage, message.response_metadata.get("model", "claude-sonnet-5"))
 
     return result
