@@ -15,6 +15,7 @@ class Settings(BaseSettings):
     ANTHROPIC_API_KEY: str
     ANTHROPIC_MODEL: str = "claude-sonnet-5"
     MAX_TOKENS: int = 1024
+    RULES_PATH: str = "/app/rag/agent_rules.txt"
 
     # Embeddings and retrieval
     EMBEDDING_MODEL_NAME: str = "sentence-transformers/all-MiniLM-L6-v2"
