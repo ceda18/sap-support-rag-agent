@@ -19,7 +19,7 @@ def build_llm() -> ChatAnthropic:
         model=settings.ANTHROPIC_MODEL,
         api_key=settings.ANTHROPIC_API_KEY,
         max_tokens=settings.MAX_TOKENS,
-        temperature=0,
+        #temperature=0,
     )
 
 
