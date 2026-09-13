@@ -35,16 +35,16 @@ class Settings(BaseSettings):
     POSTGRES_USER: str
     POSTGRES_PASSWORD: str
     POSTGRES_DB: str
-    POSTGRES_HOST: str = "db"
-    POSTGRES_PORT: int = 5432
+    POSTGRES_HOST: str #= "db"
+    POSTGRES_PORT: int #= 5432
 
     # Slack
-    SLACK_BOT_TOKEN: str = ""
-    SLACK_APP_TOKEN: str = ""
-    SLACK_SIGNING_SECRET: str = ""
+    SLACK_BOT_TOKEN: str #= ""
+    SLACK_APP_TOKEN: str #= ""
+    SLACK_SIGNING_SECRET: str #= ""
 
     # n8n
-    N8N_WEBHOOK_URL: str = ""
+    N8N_WEBHOOK_URL: str #= ""
 
     @property
     def connection_string(self) -> str:

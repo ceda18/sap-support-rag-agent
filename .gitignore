@@ -4,4 +4,4 @@ __pycache__/
 .DS_Store
 data/*.pdf
 data/pgdata/
-app/data/chunks.json
+#app/data/chunks.json
