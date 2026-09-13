@@ -40,7 +40,7 @@
             "timestamp": "={{$json.body.timestamp}}",
             "user_id": "={{$json.body.user_id}}",
             "query": "={{$json.body.query}}",
-            "answer": "={{$json.body.aswer}}",
+            "answer": "={{$json.body.answer}}",
             "unanswered": "={{$json.body.unanswered}}",
             "out_of_scope": "={{$json.body.out_of_scope}}",
             "cost_usd": "={{$json.body.cost_usd}}"
@@ -388,7 +388,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "d8a86be0-a9e0-4c17-8b6e-88f6157cfcf3",
+  "versionId": "f11ca806-8b0c-466a-b29e-51e30b877de1",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "7a51e7f86ff91a51a7ff838b2933bfb92b5326b5ca3110038b5220edf299f77d"
