@@ -14,6 +14,10 @@
 </p>
 
 ---
+> [!IMPORTANT]
+> **Try it yourself:** join the Slack workspace and mention `@SAP PaPM Support` with any SAP PaPM question - [invite link](https://join.slack.com/t/playground-ofu7546/shared_invite/zt-49l19w3kz-juQpvRjCti~MaY5isLJuWQ). Every answer is logged live to this [Google Sheet](https://docs.google.com/spreadsheets/d/1CQ7RlmUQvj6vNr4bRhYqcBHqA4j5qgwfJ_zbmfS9mmY/) with tokens, cost, cache hit ratio and cited pages, so you can watch it work in real time.
+> The bot only answers while the backend is actually running - if it goes quiet, the container is probably asleep at the moment; try again in a bit.
+> Alternatively, you may setup the app locally on your own terms.
 
 ## The short version
 
