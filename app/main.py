@@ -67,6 +67,7 @@ async def handle_question(text: str, say, user_id: str = "unknown"):
 @slack_app.event("app_mention")
 async def handle_mention(event, say):
     """React to mentions of the bot (@SAP Support RAG Agent)."""
+    logger.info("... Message: handle_mention: %s", event)
     await handle_question(event.get("text", ""), say, user_id=event.get("user", "unknown"))
 
 
@@ -75,4 +76,5 @@ async def handle_direct_message(event, say):
     """React to direct messages, ignoring the bot's own messages."""
     if event.get("channel_type") != "im" or event.get("bot_id"):
         return
+    logger.info("... Message: handle_direct_message: %s", event)
     await handle_question(event.get("text", ""), say, user_id=event.get("user", "unknown"))
