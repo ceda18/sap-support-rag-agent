@@ -46,16 +46,8 @@
 <!-- PLACEHOLDER: demo.gif -->
 ![Demo](assets/demo.gif)
 
-> **📌 What to record here (15–30s, no audio needed):**
-> 1. Type a real SAP PaPM question in Slack and show the answer coming back **with the page citations line** at the bottom.
-> 2. Ask something in-scope but not in the docs → show the `[NO_ANSWER]` style response ("not covered by the indexed documentation").
-> 3. Ask something off-topic ("write me a python script") → show the one-line refusal.
-> Save as `docs/demo.gif`. Keep it under ~5 MB so it loads instantly on GitHub.
-
 <!-- PLACEHOLDER: telemetry screenshot -->
 ![Telemetry](assets/telemetry.png)
-
-> **📌 What to screenshot here:** the Google Sheet with both tabs visible - `Log` (timestamp, user, query, tokens, cache hit ratio, cost) and `KB Gaps`. Blur or fake the user IDs. This one image is what turns "a chatbot" into "an operated system" for anyone reviewing the repo.
 
 ---
 
@@ -103,7 +95,7 @@ flowchart TD
 
 ### The flow, step by step
 
-1. **Offline, once :** `ingest.py` reads the PDF page by page with `pdfplumber`, splits it into **1,028 chunks** (1000 chars, 200 overlap, split preferring section headings like `1.1.2`), keeps the page number in the metadata, then writes them twice: as embeddings into `pgvector`, and as `chunks.json` on disk for BM25.
+1. **Setup, once :** `ingest.py` reads the PDF page by page with `pdfplumber`, splits it into **1,028 chunks** (1000 chars, 200 overlap, split preferring section headings like `1.1.2`), keeps the page number in the metadata, then writes them twice: as embeddings into `pgvector`, and as `chunks.json` on disk for BM25.
 2. **A question arrives :** via `@mention` or DM. Socket Mode means Slack opens the connection to us, not the other way around.
 3. **Hybrid retrieval :** BM25 (weight `0.4`) and pgvector (weight `0.6`) each return their top 5; `EnsembleRetriever` fuses the rankings.
 4. **Prompt :** retrieved chunks are rendered as a context block, each tagged `[source: … | p. N]`. The system prompt (`agent_rules.txt`) is sent with `cache_control: ephemeral` so Anthropic caches it and re-reads cost ~10% of normal input tokens.
@@ -112,7 +104,7 @@ flowchart TD
 
 ---
 
-## What it actually does well
+## Perks I like about it
 
 **Hybrid retrieval, not just vectors.** SAP documentation is full of exact strings - function types, field names, transaction codes. Pure semantic search is bad at those. BM25 handles the literal match, embeddings handle "the run never finishes" → *iterative allocation tolerance*.
 
@@ -127,7 +119,7 @@ flowchart TD
 
 Both tags are stripped before the message reaches Slack - users see a clean answer, the pipeline sees the signal.
 
-**Cost is measured, not guessed.** Every response's token usage is read straight off the Anthropic response - including `cache_creation` and `cache_read` - priced per model, and written to the sheet:
+**Cost is actually measured, not guessed.** Every response's token usage is read straight off the Anthropic response - including `cache_creation` and `cache_read` - priced per model, and written to the sheet:
 
 | Column | |
 |---|---|
@@ -183,7 +175,7 @@ sap-support-rag-agent/
 ### 1. Clone and configure
 
 ```bash
-git clone https://github.com/<your-username>/sap-support-rag-agent.git
+git clone https://github.com/ceda18/sap-support-rag-agent.git
 cd sap-support-rag-agent
 cp .env.example .env
 ```
@@ -285,9 +277,10 @@ All of it lives in `app/core/config.py` and is overridable from `.env`:
 
 **Decisions that changed along the way:**
 
-- **ChromaDB → pgvector.** One Postgres container instead of a second database service, and it makes the setup look like something you'd actually deploy.
-- **Pure vector search → hybrid.** SAP docs are dense with exact identifiers; BM25 earns its place.
+- **ChromaDB -> pgvector.** One Postgres container instead of a second database service, and it makes the setup look like something you'd actually deploy.
+- **Pure vector search -> hybrid.** SAP docs are dense with exact identifiers; BM25 earns its place.
 - **No separate web frontend.** Slack *is* the frontend. Building a UI would have added surface area without proving anything new.
+- **High-cost alert removed from scope.** Alerts per single high request cost didn't seem much needed as all single requests cost about 5k token. An alert for general high-use across a worspace might be a more suitible option.
 
 </details>
 
