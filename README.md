@@ -231,7 +231,7 @@ Takes a few minutes on CPU. You should see the chunk count and `✅ Insertion co
 3. Connect your Google Sheets credential, then repoint both Sheets nodes to your own spreadsheet with two tabs: `Log` and `KB Gaps`.
 4. Activate the workflow.
 
-![Demo](assets/demo.gif)
+![n8n](assets/n8n.png)
 
 ### 7. Ask it something
 
