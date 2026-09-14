@@ -231,6 +231,8 @@ Takes a few minutes on CPU. You should see the chunk count and `✅ Insertion co
 3. Connect your Google Sheets credential, then repoint both Sheets nodes to your own spreadsheet with two tabs: `Log` and `KB Gaps`.
 4. Activate the workflow.
 
+![Demo](assets/demo.gif)
+
 ### 7. Ask it something
 
 Mention the bot in a channel or DM it directly. It's ready when the API log shows `✅ Retriever ready` and `✅ Slack Socket Mode handler: running`.
