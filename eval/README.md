@@ -33,9 +33,9 @@ Metric functions and the fusion are covered by hand-computed tests
 
 ## Results
 
-Full tables: [`results/retrieval_report.md`](retrieval_report.md),
-[`results/rerank_report.md`](rerank_report.md),
-[`results/error_analysis.md`](error_analysis.md).
+Full tables: [`results/retrieval_report.md`](results/retrieval_report.md),
+[`results/rerank_report.md`](results/rerank_report.md),
+[`results/error_analysis.md`](results/error_analysis.md).
 
 **Ranker quality** (fusion depth 100 per retriever)
 
@@ -51,14 +51,14 @@ Full tables: [`results/retrieval_report.md`](retrieval_report.md),
 - Best weight in the sweep (vector 1.0) vs. app weights: +0.014, CI [-0.097, +0.133],
   no evidence that 0.4/0.6 should change.
 
-![weight sweep](r2_weight_sweep.png)
+![weight sweep](results/r2_weight_sweep.png)
 
 **App as deployed** (top 5 from each retriever, fused, nothing cut): a gold page is in
 the context for 95.0% of questions, with 8.5 chunks (about 1,800 estimated tokens) on
 average. `TOP_K=5` sits at the knee of the curve: 0.850 at `TOP_K=3`, flat at 0.950
 from 5 to 20.
 
-![context size](r3_context_size.png)
+![context size](results/r3_context_size.png)
 
 **Cross-encoder reranker** (`ms-marco-MiniLM-L-6-v2`, top 30 hybrid chunks, CPU)
 
