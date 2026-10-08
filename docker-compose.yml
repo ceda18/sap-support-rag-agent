@@ -23,6 +23,7 @@ services:
     volumes:
       - ./app:/app
       - ./data:/data
+      - ./eval:/eval
     depends_on:
       - db
 
