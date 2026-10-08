@@ -35,3 +35,6 @@ rank_bm25 # keyword scoring backend used by BM25Retriever
 
 # Document Processing (PDF)
 pdfplumber # great for extracting text from PDFs, especially scanned documents
+
+# Eval Charts
+matplotlib # for plotting evaluation charts

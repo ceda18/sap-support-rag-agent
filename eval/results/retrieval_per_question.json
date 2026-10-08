@@ -1,0 +1,1767 @@
+{
+ "best_vector_weight": 1.0,
+ "questions": [
+  {
+   "id": "syn-01",
+   "type": "synthetic",
+   "gold_pages": [
+    4
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "syn-02",
+   "type": "synthetic",
+   "gold_pages": [
+    12
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "syn-03",
+   "type": "synthetic",
+   "gold_pages": [
+    22
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "syn-04",
+   "type": "synthetic",
+   "gold_pages": [
+    30
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Vector only": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.2,
+     "ndcg@10": 0.38685280723454163
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.2,
+     "ndcg@10": 0.38685280723454163
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    }
+   }
+  },
+  {
+   "id": "syn-05",
+   "type": "synthetic",
+   "gold_pages": [
+    39
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.3333333333333333,
+     "ndcg@10": 0.5
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.3333333333333333,
+     "ndcg@10": 0.5
+    }
+   }
+  },
+  {
+   "id": "syn-06",
+   "type": "synthetic",
+   "gold_pages": [
+    46
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    }
+   }
+  },
+  {
+   "id": "syn-07",
+   "type": "synthetic",
+   "gold_pages": [
+    54
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    }
+   }
+  },
+  {
+   "id": "syn-08",
+   "type": "synthetic",
+   "gold_pages": [
+    69
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "syn-09",
+   "type": "synthetic",
+   "gold_pages": [
+    70
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 0.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.16666666666666666,
+     "ndcg@10": 0.3562071871080222
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 0.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.1111111111111111,
+     "ndcg@10": 0.3010299956639812
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    }
+   }
+  },
+  {
+   "id": "syn-10",
+   "type": "synthetic",
+   "gold_pages": [
+    89
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "syn-11",
+   "type": "synthetic",
+   "gold_pages": [
+    94
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Vector only": {
+     "recall@5": 0.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.1,
+     "ndcg@10": 0.2890648263178879
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.25,
+     "ndcg@10": 0.43067655807339306
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.25,
+     "ndcg@10": 0.43067655807339306
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 0.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.1,
+     "ndcg@10": 0.2890648263178879
+    }
+   }
+  },
+  {
+   "id": "syn-12",
+   "type": "synthetic",
+   "gold_pages": [
+    98
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    }
+   }
+  },
+  {
+   "id": "syn-13",
+   "type": "synthetic",
+   "gold_pages": [
+    107
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.125,
+     "ndcg@10": 0.31546487678572877
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.3333333333333333,
+     "ndcg@10": 0.5
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "syn-14",
+   "type": "synthetic",
+   "gold_pages": [
+    115
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    }
+   }
+  },
+  {
+   "id": "syn-15",
+   "type": "synthetic",
+   "gold_pages": [
+    126
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.14285714285714285,
+     "ndcg@10": 0.3333333333333333
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.25,
+     "ndcg@10": 0.43067655807339306
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.2,
+     "ndcg@10": 0.38685280723454163
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.2,
+     "ndcg@10": 0.38685280723454163
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.25,
+     "ndcg@10": 0.43067655807339306
+    }
+   }
+  },
+  {
+   "id": "syn-16",
+   "type": "synthetic",
+   "gold_pages": [
+    134
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.14285714285714285,
+     "ndcg@10": 0.3333333333333333
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.3333333333333333,
+     "ndcg@10": 0.5
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "syn-17",
+   "type": "synthetic",
+   "gold_pages": [
+    147
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "syn-18",
+   "type": "synthetic",
+   "gold_pages": [
+    148
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.125,
+     "ndcg@10": 0.31546487678572877
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    }
+   }
+  },
+  {
+   "id": "syn-19",
+   "type": "synthetic",
+   "gold_pages": [
+    162
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.3333333333333333,
+     "ndcg@10": 0.5
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.3333333333333333,
+     "ndcg@10": 0.5
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.3333333333333333,
+     "ndcg@10": 0.5
+    }
+   }
+  },
+  {
+   "id": "syn-20",
+   "type": "synthetic",
+   "gold_pages": [
+    166
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.2,
+     "ndcg@10": 0.38685280723454163
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 0.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.14285714285714285,
+     "ndcg@10": 0.3333333333333333
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    }
+   }
+  },
+  {
+   "id": "syn-21",
+   "type": "synthetic",
+   "gold_pages": [
+    181
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.14285714285714285,
+     "ndcg@10": 0.3333333333333333
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.25,
+     "ndcg@10": 0.43067655807339306
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.25,
+     "ndcg@10": 0.43067655807339306
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.2,
+     "ndcg@10": 0.38685280723454163
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.25,
+     "ndcg@10": 0.43067655807339306
+    }
+   }
+  },
+  {
+   "id": "syn-22",
+   "type": "synthetic",
+   "gold_pages": [
+    190
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.125,
+     "ndcg@10": 0.31546487678572877
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "syn-23",
+   "type": "synthetic",
+   "gold_pages": [
+    196
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "syn-24",
+   "type": "synthetic",
+   "gold_pages": [
+    206
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "syn-25",
+   "type": "synthetic",
+   "gold_pages": [
+    219
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "syn-26",
+   "type": "synthetic",
+   "gold_pages": [
+    224
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.25,
+     "ndcg@10": 0.43067655807339306
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "syn-27",
+   "type": "synthetic",
+   "gold_pages": [
+    230
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.3333333333333333,
+     "ndcg@10": 0.5
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "syn-28",
+   "type": "synthetic",
+   "gold_pages": [
+    243
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Vector only": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    }
+   }
+  },
+  {
+   "id": "syn-29",
+   "type": "synthetic",
+   "gold_pages": [
+    259
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.25,
+     "ndcg@10": 0.43067655807339306
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.25,
+     "ndcg@10": 0.43067655807339306
+    }
+   }
+  },
+  {
+   "id": "syn-30",
+   "type": "synthetic",
+   "gold_pages": [
+    267
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    }
+   }
+  },
+  {
+   "id": "man-01",
+   "type": "manual",
+   "gold_pages": [
+    30
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    }
+   }
+  },
+  {
+   "id": "man-02",
+   "type": "manual",
+   "gold_pages": [
+    35
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    }
+   }
+  },
+  {
+   "id": "man-03",
+   "type": "manual",
+   "gold_pages": [
+    42,
+    43
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 0.5,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.25,
+     "ndcg@10": 0.44130740935663865
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 0.5,
+     "recall@10": 0.5,
+     "recall@20": 1.0,
+     "mrr@10": 0.25,
+     "ndcg@10": 0.2640681225725909
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "man-04",
+   "type": "manual",
+   "gold_pages": [
+    105
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.2,
+     "ndcg@10": 0.38685280723454163
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.2,
+     "ndcg@10": 0.38685280723454163
+    }
+   }
+  },
+  {
+   "id": "man-05",
+   "type": "manual",
+   "gold_pages": [
+    265
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.16666666666666666,
+     "ndcg@10": 0.3562071871080222
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.3333333333333333,
+     "ndcg@10": 0.5
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.3333333333333333,
+     "ndcg@10": 0.5
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.25,
+     "ndcg@10": 0.43067655807339306
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.3333333333333333,
+     "ndcg@10": 0.5
+    }
+   }
+  },
+  {
+   "id": "man-06",
+   "type": "manual",
+   "gold_pages": [
+    72
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.3333333333333333,
+     "ndcg@10": 0.5
+    }
+   }
+  },
+  {
+   "id": "man-07",
+   "type": "manual",
+   "gold_pages": [
+    21
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.5,
+     "ndcg@10": 0.6309297535714575
+    },
+    "Vector only": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.3333333333333333,
+     "ndcg@10": 0.5
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.3333333333333333,
+     "ndcg@10": 0.5
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    }
+   }
+  },
+  {
+   "id": "man-08",
+   "type": "manual",
+   "gold_pages": [
+    14
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Vector only": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    }
+   }
+  },
+  {
+   "id": "man-09",
+   "type": "manual",
+   "gold_pages": [
+    396,
+    397
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 0.8772153153380493
+    },
+    "Vector only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 1.0,
+     "ndcg@10": 1.0
+    }
+   }
+  },
+  {
+   "id": "man-10",
+   "type": "manual",
+   "gold_pages": [
+    3
+   ],
+   "scores": {
+    "BM25 only": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.2,
+     "ndcg@10": 0.38685280723454163
+    },
+    "Vector only": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    },
+    "Hybrid 0.4/0.6 (app weights)": {
+     "recall@5": 0.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.14285714285714285,
+     "ndcg@10": 0.3333333333333333
+    },
+    "RRF 0.5/0.5": {
+     "recall@5": 1.0,
+     "recall@10": 1.0,
+     "recall@20": 1.0,
+     "mrr@10": 0.2,
+     "ndcg@10": 0.38685280723454163
+    },
+    "Best sweep weight (1.0)": {
+     "recall@5": 0.0,
+     "recall@10": 0.0,
+     "recall@20": 0.0,
+     "mrr@10": 0.0,
+     "ndcg@10": 0.0
+    }
+   }
+  }
+ ]
+}
