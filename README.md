@@ -26,7 +26,7 @@
 
 **The solution.** Ask the bot in Slack, get a short answer with exact page citations. If the documentation doesn't cover it, the bot says so instead of inventing an answer - and that gap gets logged so someone can fix the knowledge base.
 
-**Why it's interesting.** Every question is logged to Google Sheets with its token usage and estimated USD cost, so the thing is observable and budgetable from day one, not after it blows up.
+**Why it's interesting.** It's measured, not judged by feel. A fixed 50-question test set shows the right manual page reaches the model for **95%** of answerable questions, and every live question is logged with its token usage and USD cost - observable and budgetable from day one. [Evaluation](#evaluation)
 
 ```
 👤 Slack user:  @SAP PaPM Support | What happens if an allocation cycle has no exit condition configured?
@@ -62,12 +62,13 @@
 |---|---|---|
 | **Interface** | Slack (`slack-bolt`, Socket Mode) | Users are already there. Socket Mode = no public URL, no ngrok, no inbound firewall rules. |
 | **Backend** | FastAPI + LangChain 1.0 | Async, and the whole RAG flow is one LCEL chain. |
-| **Retrieval** | `EnsembleRetriever` = BM25 + pgvector | Keyword search catches exact identifiers, vector search catches paraphrases. Both, weighted. |
+| **Retrieval** | `EnsembleRetriever` = BM25 + pgvector | Keyword search catches exact identifiers, vector search catches paraphrases. Fused with weighted RRF (0.4 / 0.6). |
 | **Embeddings** | `all-MiniLM-L6-v2` (local, CPU) | Runs in the container, costs nothing, fast enough for 1k chunks. |
 | **LLM** | Claude via `langchain-anthropic` | With **prompt caching** on the system prompt - the rules are long and identical on every call. |
 | **Database** | PostgreSQL + `pgvector` | One database for vectors, no extra vector-DB service to run. |
 | **Automation** | n8n → Google Sheets | Telemetry and knowledge-gap routing without writing a logging backend. |
 | **Deployment** | Docker Compose (3 services) | `docker compose up` and the whole stack is running. |
+| **Evaluation** | Offline retrieval eval (Recall@k, MRR, NDCG, bootstrap CIs) | 50 questions with labelled gold pages; fusion weight, `TOP_K` and the reranker were checked against it. |
 
 ---
 
@@ -102,7 +103,7 @@ flowchart TD
 
 1. **Setup, once :** `ingest.py` reads the PDF page by page with `pdfplumber`, splits it into **1,028 chunks** (1000 chars, 200 overlap, split preferring section headings like `1.1.2`), keeps the page number in the metadata, then writes them twice: as embeddings into `pgvector`, and as `chunks.json` on disk for BM25.
 2. **A question arrives :** via `@mention` or DM. Socket Mode means Slack opens the connection to us, not the other way around.
-3. **Hybrid retrieval :** BM25 (weight `0.4`) and pgvector (weight `0.6`) each return their top 5; `EnsembleRetriever` fuses the rankings.
+3. **Hybrid retrieval :** BM25 (weight `0.4`) and pgvector (weight `0.6`) each return their top 5; `EnsembleRetriever` fuses them with weighted Reciprocal Rank Fusion. The context is the union of both lists (~8.5 chunks, ~1.8k tokens on average), so the weights decide the order, not what gets in.
 4. **Prompt :** retrieved chunks are rendered as a context block, each tagged `[source: … | p. N]`. The system prompt (`agent_rules.txt`) is sent with `cache_control: ephemeral` so Anthropic caches it and re-reads cost ~10% of normal input tokens.
 5. **Answer :** Claude cites pages inline as `[p. 212]`. The app parses those out and appends only the **pages actually cited**, not everything retrieved.
 6. **Telemetry :** a fire-and-forget `asyncio` task POSTs the usage record to n8n. If n8n is down, the user never notices.
@@ -111,7 +112,7 @@ flowchart TD
 
 ## Perks I like about it
 
-**Hybrid retrieval, not just vectors.** SAP documentation is full of exact strings - function types, field names, transaction codes. Pure semantic search is bad at those. BM25 handles the literal match, embeddings handle "the run never finishes" → *iterative allocation tolerance*.
+**Hybrid retrieval, not just vectors.** SAP documentation is full of exact strings - function types, field names, transaction codes. Pure semantic search is expected to strugle with those. BM25 handles the literal match, embeddings handle "the run never finishes" → *iterative allocation tolerance*.
 
 **Citations that are real.** The model is instructed to cite `[p. N]` only from page numbers present in the context, and the app cross-checks the answer against what was retrieved before building the sources line. No page number in the answer = no page number in the footer.
 
@@ -133,6 +134,48 @@ Both tags are stripped before the message reaches Slack - users see a clean answ
 | `cache_hit_ratio` | proof the prompt cache is working |
 | `cost_usd` | per-question cost, cache discounts applied |
 | `unanswered`, `out_of_scope`, `sources` | quality signals |
+
+---
+
+## Evaluation
+
+Retrieval is evaluated offline on a fixed test set of **50 questions** (30 synthetic and hand-reviewed, 10 hand-written, 10 unanswerable), frozen in git before the first run. Relevance is labelled per manual page; metrics use the 40 answerable questions, and every comparison comes with a 95% paired bootstrap CI. Method, full tables and error analysis: [`eval/`](eval/README.md).
+
+| | Result |
+|---|---|
+| Right page in the context sent to Claude | **95%** of answerable questions, ~8.5 chunks / ~1.8k tokens |
+| Hybrid vs. BM25 only | MRR@10 **0.45 → 0.57**, CI [+0.02, +0.23] |
+| + cross-encoder reranker (offline) | MRR@10 **0.57 → 0.73**, CI [+0.04, +0.30] |
+| Silent failure caught | the vector collection was empty, so the app was running on keyword search only |
+
+### Fusion weight: why 0.4 / 0.6
+
+![weight sweep](eval/results/r2_weight_sweep.png)
+
+- **Adding vectors to BM25 clearly pays off:** MRR@10 +0.118 and Recall@5 +0.237 over BM25 only, both CIs above zero.
+- **0.6 is the best of the mixed weights** (MRR@10 0.571, Recall@5 0.812). Pure vector (1.0) scores marginally higher, but the gap is +0.014 with CI [-0.097, +0.133] - noise at 40 questions, so there is no evidence the weight should change.
+- BM25 stays in on purpose: the test set under-represents exact-identifier queries (function names, transaction codes), which is where keyword search is expected to matter.
+
+### Context size: why `TOP_K=5`
+
+![context size](eval/results/r3_context_size.png)
+
+`TOP_K=5` sits at the knee: 85% at `TOP_K=3`, then flat at 95% up to 20. Going higher only adds tokens.
+
+### Reranker
+
+`cross-encoder/ms-marco-MiniLM-L-6-v2` on CPU, reordering the top 30 hybrid chunks:
+
+| metric | hybrid | + reranker | Δ | 95% CI |
+|---|---|---|---|---|
+| **MRR@10** | 0.571 | **0.734** | **+0.164** | [+0.036, +0.302] |
+| **NDCG@10** | 0.646 | **0.788** | **+0.142** | [+0.039, +0.256] |
+| Recall@5 | 0.812 | 0.875 | +0.062 | [-0.025, +0.175] |
+
+The right page moves to the top far more often (MRR and NDCG gains are significant). It matters most when the context is cut short: with only the top 3 chunks sent, the right page is in context for **85%** of questions instead of 67.5% (~640 tokens). It is **not in the deployed app yet**: at the current context size the union already reaches 95%, and the reranker adds ~0.6 s p50 (1.2 s p95) per question against ~15 ms for the whole current retrieval.
+
+> [!NOTE]
+> 40 answerable questions and one annotator, so intervals are wide; the weight and the reranker were assessed on the same questions (no held-out set). Generation quality (faithfulness, citations, abstention) is not evaluated yet. See [limitations](eval/README.md#limitations).
 
 ---
 
@@ -162,6 +205,11 @@ sap-support-rag-agent/
 │   ├── data/chunks.json          # generated by ingest.py, consumed by BM25 (gitignored)
 │   ├── Dockerfile
 │   └── requirements.txt
+├── eval/                         # offline retrieval evaluation (see eval/README.md)
+│   ├── dataset/questions.jsonl   # 50 questions with gold pages, frozen before the first run
+│   ├── retrieval/                # snapshot run, fusion, metrics, sweeps, reranker, error analysis
+│   ├── runs/                     # raw top-100 rankings per retriever
+│   └── results/                  # reports + charts
 │
 ├── data/                         # source PDF (gitignored - it's SAP's, not mine)
 ├── n8n/My workflow.json          # exported n8n workflow, importable as-is
@@ -295,8 +343,9 @@ All of it lives in `app/core/config.py` and is overridable from `.env`:
 
 ## Where this would go next
 
-- **Evaluation set.** A fixed list of ~50 questions with known-correct pages, run on every change to `TOP_K` / weights / chunk size. Right now retrieval tuning is judged by feel.
-- **Reranker.** A cross-encoder pass over the ensemble output before the context is built.
+- **Generation evaluation.** Faithfulness and citation accuracy with an LLM judge, abstention on the 10 unanswerable questions, end-to-end cost and latency.
+- **Reranker in production.** Already evaluated offline (MRR@10 from 0.57 to 0.73); worth shipping once the context is cut to top-N chunks, where it lifts coverage at 3 chunks from 67.5% to 85%.
+- **BM25 tokenizer.** Lowercase and strip punctuation; the plain `split()` shows up in at least 3 of the 7 retrieval misses.
 - **Multi-document.** Metadata filtering by document + version, so answers can be scoped to a release.
 - **Conversation memory.** Currently every question is independent — no follow-ups.
 - **Streaming.** Slack `chat.update` to stream the answer instead of waiting for the full response.
@@ -309,4 +358,4 @@ The SAP PaPM Application Help PDF is SAP's intellectual property and is **not co
 
 ---
 
-<p align="center"><i>Built to have working proof of RAG, LangChain, n8n and Docker in one place — rather than a line on a CV that says so.</i></p>
+<p align="center"><i>Built to have working, measured proof of RAG, LangChain, n8n and Docker in one place — rather than a line on a CV that says so.</i></p>
